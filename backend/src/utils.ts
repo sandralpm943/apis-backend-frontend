@@ -32,7 +32,7 @@ const isWeather =(param: any): boolean => {
     return Object.values(Weather).includes(param)
 }
 const isVisibility = (param: any): boolean =>{
-    return Object.values(Weather).includes(param)
+    return Object.values(Visibility).includes(param)
 }
 
 const isString = (string:string):boolean => {
@@ -43,9 +43,9 @@ const isDate = (date: string): boolean =>  {
     return Boolean(Date.parse(date))
 }
 
-const toNewDiaryEntry = (object: any): NewDiaryEntry=>{
+const toNewDiaryEntry = (object: any): newDiaryEntry=>{
     const newEntry: newDiaryEntry = {
-        comment: parseComment(object.comment)
+        comment: parseComment(object.comment),
         date: parseDate(object.date),
         weather: parseWeather(object.weather),
         visibility: parseVisibility(object.visibility)
